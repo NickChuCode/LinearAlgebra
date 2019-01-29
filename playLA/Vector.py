@@ -17,6 +17,11 @@ class Vector:
         """返回向量长度（有多少个元素）"""
         return len(self._values)
 
+    @classmethod
+    def zero(cls, dim):
+        """返回一个dim维的零向量"""
+        return cls([0] * dim)
+
     def __iter__(self):
         """返回向量的迭代器"""
         return self._values.__iter__()
