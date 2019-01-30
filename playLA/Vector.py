@@ -70,3 +70,11 @@ class Vector:
     def __neg__(self):
         """返回向量取负的结果向量"""
         return -1 * self
+
+
+    def dot(self, other):
+        """向量点乘，返回结果向量"""
+        assert len(self) == len(other), \
+            "Error in dot product, the length of vectors must be the same."
+
+        return sum(a * b for a, b in zip(self, other))
