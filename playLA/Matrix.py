@@ -57,3 +57,12 @@ class Matrix:
 
         return Matrix([[a - b for a, b in zip(self.row_vector(i), other.row_vector(i))]
                        for i in range(self.row_num())])
+
+    def __mul__(self, k):
+        """返回矩阵的数量乘结果：self * k"""
+        return Matrix([[e * k for e in self.row_vector(i)]
+                       for i in range(self.row_num())])
+
+    def __rmul__(self, k):
+        """返回矩阵的数量乘结果： k * self"""
+        return self * k
