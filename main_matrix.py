@@ -17,3 +17,4 @@ if __name__ == '__main__':
 
     print("scalar-mul: {}".format(matrix * 2))
     print("scalar-rmul: {}".format(2 * matrix))
+    print("zero_2_3: {}".format(Matrix.zero(2, 3)))
