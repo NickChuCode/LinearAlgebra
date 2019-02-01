@@ -41,3 +41,19 @@ class Matrix:
         """返回矩阵pos位置的元素"""
         r, c = pos
         return self._values[r][c]
+
+    def __add__(self, other):
+        """返回两个矩阵的加法结果"""
+        assert self.shape() == other.shape(), \
+            "Error in adding, the shape of matrix must be the same."
+
+        return Matrix([[a + b for a, b in zip(self.row_vector(i), other.row_vector(i))]
+                       for i in range(self.row_num())])
+
+    def __sub__(self, other):
+        """返回两个矩阵的减法结果"""
+        assert self.shape() == other.shape(), \
+            "Error in substracting, the shape of matrix must be the same."
+
+        return Matrix([[a - b for a, b in zip(self.row_vector(i), other.row_vector(i))]
+                       for i in range(self.row_num())])
